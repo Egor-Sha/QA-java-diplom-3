@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class RegisterPage {     //https://stellarburgers.nomoreparties.site/register
 
-        public static final String URL = "https://qa-scooter.praktikum-services.ru/";
+        public static final String URL = "https://stellarburgers.nomoreparties.site/register";
 
         @FindBy(how = How.XPATH, using = "//input[@type='text']")
         public SelenideElement userNameField;
@@ -29,22 +29,27 @@ public class RegisterPage {     //https://stellarburgers.nomoreparties.site/regi
                 userPasswordField.setValue(password);return this;}
 
         @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/form/button")
-        public SelenideElement RegisterButton;  // создать заказ
+        public SelenideElement registerButton;
 
         public LoginPage clickConfirmButton() {
-                RegisterButton.click();
-                return page(LoginPage.class);
-        }
+                registerButton.click();
+                return page(LoginPage.class);}
 
         public RegisterPage clickConfirmButtonSamePage() {
-                RegisterButton.click();
-                return page(RegisterPage.class);
-        }
+                registerButton.click();
+                return page(RegisterPage.class);}
 
         @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/form/fieldset[3]/div/p")
-        public SelenideElement IncorrectPasswordMessage; // сообщение о создании заказа
+        public SelenideElement incorrectPasswordMessage;
 
         public boolean isPasswordIncorrect() {
-                return IncorrectPasswordMessage.shouldBe(visible).getText().contains("Некорректный пароль");}
+                return incorrectPasswordMessage.shouldBe(visible).getText().contains("Некорректный пароль");}
+
+        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/div/p/a")
+        public SelenideElement toLoginButton;
+
+        public LoginPage clickToLoginButton() {
+                toLoginButton.click();
+                return page(LoginPage.class);}
 
 }
