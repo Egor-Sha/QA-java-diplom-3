@@ -1,6 +1,6 @@
 praktikum-web-diploma.iml
 
-build/reports/tests
+build
 .allure/allure-2.15.0
 .idea
 target

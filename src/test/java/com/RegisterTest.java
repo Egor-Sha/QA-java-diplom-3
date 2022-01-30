@@ -42,4 +42,5 @@ public class RegisterTest extends AppTest {
                 .isPasswordIncorrect();
         assertTrue(isPasswordIncorrect, "Incorrect registry passed");
     }
+
 }

@@ -4,7 +4,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-import com.UserOperations;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class AppTest {
