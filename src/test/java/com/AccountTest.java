@@ -3,8 +3,6 @@ package com;
 import com.PageObject.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -29,9 +27,7 @@ public class AccountTest extends AppTest {
                 .clickLoginButton()
                 .clickAccountButton()
                 .isAccountSection();
-
         assertTrue(isAccountSection, "Problem with account details access");
-        closeWebDriver();
     }
 
     @Test
@@ -43,9 +39,7 @@ public class AccountTest extends AppTest {
                 .clickAccountButton()
                 .clickToConstructorButton()
                 .isUserLogin();
-
         assertTrue(isUserLogin, "Problem with the link in Constructor button");
-        closeWebDriver();
     }
 
     @Test
@@ -57,9 +51,6 @@ public class AccountTest extends AppTest {
                 .clickAccountButton()
                 .clickToLogo()
                 .isUserLogin();
-
         assertTrue(isUserLogin, "Problem with the link in Logo");
-        closeWebDriver();
     }
-
 }

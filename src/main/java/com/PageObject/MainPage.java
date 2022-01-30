@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.page;
 
@@ -11,11 +12,11 @@ public class MainPage {
 
         public static final String URL = "https://stellarburgers.nomoreparties.site/";
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/header/nav/a")
+        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/section[2]/div/button")
         public SelenideElement PersonalAccount;
 
         public boolean isUserLogin() {
-                return PersonalAccount.shouldBe(visible).getText().contains("Личный Кабинет");}
+                return PersonalAccount.shouldBe(enabled).getText().contains("Оформить заказ");}
 
         @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/header/nav/a")
         public SelenideElement accountButton;
@@ -34,7 +35,6 @@ public class MainPage {
         public LoginPage clickLoginAccountButtonToLogin() {
                 loginAccountButton.click();
                 return page(LoginPage.class);}
-
 
         @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/section[1]/div[1]/div[1]")
         public SelenideElement bunButton;
@@ -61,7 +61,6 @@ public class MainPage {
         public boolean isSauceActive() {
                 return sauceSection.shouldBe(visible).isDisplayed();}
 
-
         @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/section[1]/div[1]/div[3]")
         public SelenideElement fillingButton;
 
@@ -73,7 +72,4 @@ public class MainPage {
 
         public boolean isFillingActive() {
                 return fillingSection.shouldBe(visible).isDisplayed();}
-
-
-
 }

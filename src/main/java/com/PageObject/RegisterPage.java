@@ -6,7 +6,7 @@ import org.openqa.selenium.support.How;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.page;
 
-public class RegisterPage {     //https://stellarburgers.nomoreparties.site/register
+public class RegisterPage {
 
         public static final String URL = "https://stellarburgers.nomoreparties.site/register";
 
@@ -51,5 +51,4 @@ public class RegisterPage {     //https://stellarburgers.nomoreparties.site/regi
         public LoginPage clickToLoginButton() {
                 toLoginButton.click();
                 return page(LoginPage.class);}
-
 }

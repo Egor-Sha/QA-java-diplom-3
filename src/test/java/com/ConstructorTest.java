@@ -2,12 +2,10 @@ package com;
 
 import com.PageObject.MainPage;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ConstructorTest {
+public class ConstructorTest extends AppTest{
 
     @Test
     public void FillingSectionSwitchTest() {
@@ -18,7 +16,6 @@ public class ConstructorTest {
                 .clickFillingButton()
                 .isFillingActive();
         assertTrue(isFillingActive, "The fault of Filling section switching");
-        closeWebDriver();
     }
 
     @Test
@@ -30,11 +27,10 @@ public class ConstructorTest {
                 .clickSauceButton()
                 .isSauceActive();
         assertTrue(isSauceActive, "The fault of Sauce section switching");
-        closeWebDriver();
     }
 
-        @Test
-        public void BunSectionSwitchTest() {
+    @Test
+    public void BunSectionSwitchTest() {
 
         final boolean isBunActive = open(MainPage.URL, MainPage.class)
                 .clickSauceButton()
@@ -42,7 +38,5 @@ public class ConstructorTest {
                 .clickBunButton()
                 .isBunActive();
         assertTrue(isBunActive, "The fault of Bun section switching");
-        closeWebDriver();
         }
-
 }

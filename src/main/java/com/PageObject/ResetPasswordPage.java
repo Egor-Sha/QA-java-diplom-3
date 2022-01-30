@@ -16,5 +16,4 @@ public class ResetPasswordPage {
         public LoginPage clickToLogin() {
                 toLoginButton.click();
                 return page(LoginPage.class);}
-
 }

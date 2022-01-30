@@ -6,8 +6,6 @@ import com.PageObject.RegisterPage;
 import com.PageObject.ResetPasswordPage;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -33,9 +31,7 @@ public class LoginLogoutTest extends AppTest {
                 .inputPassword(pass)
                 .clickLoginButton()
                 .isUserLogin();
-
         assertTrue(isUserLogin, "Problem with registry");
-        closeWebDriver();
     }
 
     @Test
@@ -47,9 +43,7 @@ public class LoginLogoutTest extends AppTest {
                 .inputPassword(pass)
                 .clickLoginButton()
                 .isUserLogin();
-
         assertTrue(isUserLogin, "Problem with registry");
-        closeWebDriver();
     }
 
     @Test
@@ -61,9 +55,7 @@ public class LoginLogoutTest extends AppTest {
                 .inputPassword(pass)
                 .clickLoginButton()
                 .isUserLogin();
-
         assertTrue(isUserLogin, "Problem with registry");
-        closeWebDriver();
     }
 
     @Test
@@ -75,9 +67,7 @@ public class LoginLogoutTest extends AppTest {
                 .inputPassword(pass)
                 .clickLoginButton()
                 .isUserLogin();
-
         assertTrue(isUserLogin, "Problem with registry");
-        closeWebDriver();
     }
 
     @Test
@@ -91,7 +81,6 @@ public class LoginLogoutTest extends AppTest {
                 .clickToLogoutItem()
                 .isLoginButtonAvailable();
         assertTrue(isLoginButtonAvailable, "Problem with logout");
-        closeWebDriver();
     }
 
 }

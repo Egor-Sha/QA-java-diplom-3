@@ -9,5 +9,8 @@
         <module name="praktikum-web-diploma" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="praktikum-web-diploma" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
