@@ -19,21 +19,20 @@ public class AccountPage {
                 logoutItem.shouldBe(visible).click();
                 return page(LoginPage.class);}
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/nav/p")
+        @FindBy(how = How.CLASS_NAME,using = "Account_text__fZAIn")
         public SelenideElement accountDescription;
 
         public boolean isAccountSection() {
                 return accountDescription.shouldBe(visible).getText().contains("В этом разделе вы можете изменить свои персональные данные");}
 
-
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/header/nav/ul/li[1]/a")
+        @FindBy(how = How.CSS,using = "a[href='/']")
         public SelenideElement constructorLink;
 
         public MainPage clickToConstructorButton() {
                 constructorLink.shouldBe(enabled).click();
                 return page(MainPage.class);}
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/header/nav/div/a")
+        @FindBy(how = How.CSS,using = "svg[xmlns='http://www.w3.org/2000/svg']")
         public SelenideElement logoItem;
 
         public MainPage clickToLogo() {

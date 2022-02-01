@@ -11,7 +11,6 @@ public class RegisterTest extends AppTest {
 
     @Test
     public void PositiveRegisterTest() {
-
         String name = RandomStringUtils.randomAlphabetic(8);
         String email = RandomStringUtils.randomAlphabetic(5)+"@"+RandomStringUtils.randomAlphabetic(5)+".ru";
         String pass = RandomStringUtils.randomAlphabetic(6);
@@ -42,5 +41,4 @@ public class RegisterTest extends AppTest {
                 .isPasswordIncorrect();
         assertTrue(isPasswordIncorrect, "Incorrect registry passed");
     }
-
 }

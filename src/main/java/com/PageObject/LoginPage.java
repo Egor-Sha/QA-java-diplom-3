@@ -12,7 +12,7 @@ public class LoginPage {
 
         public static final String URL = "https://stellarburgers.nomoreparties.site/login";
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/form/fieldset[1]/div/div/input")
+        @FindBy(how = How.NAME,using = "name")
         public SelenideElement userEmailField;
 
         public LoginPage inputEmail(String email) {
@@ -33,19 +33,5 @@ public class LoginPage {
 
         public boolean isLoginButtonAvailable() {
                 return loginButton.shouldBe(visible).getText().contains("Войти");}
-
-        @FindBy(how = How.CLASS_NAME,using = "Auth_link__1fOlj")
-        public SelenideElement registerButton;
-
-        public RegisterPage clickRegisterButton() {
-                registerButton.click();
-                return page(RegisterPage.class);}
-
-        @FindBy(how = How.XPATH,using = "//button")
-        public SelenideElement resetLoginButton;  // создать заказ
-
-        public ResetPasswordPage clickResetLoginButton() {
-                resetLoginButton.shouldBe(visible).click();
-                return page(ResetPasswordPage.class);}
 
 }

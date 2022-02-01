@@ -10,7 +10,7 @@ public class ResetPasswordPage {
 
         public static final String URL = "https://stellarburgers.nomoreparties.site/reset-password";
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/div/p/a")
+        @FindBy(how = How.LINK_TEXT,using = "Войти")
         public SelenideElement toLoginButton;
 
         public LoginPage clickToLogin() {

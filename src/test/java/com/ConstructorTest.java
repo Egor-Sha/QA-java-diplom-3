@@ -11,8 +11,6 @@ public class ConstructorTest extends AppTest{
     public void FillingSectionSwitchTest() {
 
         final boolean isFillingActive = open(MainPage.URL, MainPage.class)
-                .clickSauceButton()
-                .clickBunButton()
                 .clickFillingButton()
                 .isFillingActive();
         assertTrue(isFillingActive, "The fault of Filling section switching");
@@ -22,8 +20,6 @@ public class ConstructorTest extends AppTest{
     public void SauceSectionSwitchTest() {
 
         final boolean isSauceActive = open(MainPage.URL, MainPage.class)
-                .clickFillingButton()
-                .clickBunButton()
                 .clickSauceButton()
                 .isSauceActive();
         assertTrue(isSauceActive, "The fault of Sauce section switching");
@@ -34,7 +30,6 @@ public class ConstructorTest extends AppTest{
 
         final boolean isBunActive = open(MainPage.URL, MainPage.class)
                 .clickSauceButton()
-                .clickFillingButton()
                 .clickBunButton()
                 .isBunActive();
         assertTrue(isBunActive, "The fault of Bun section switching");

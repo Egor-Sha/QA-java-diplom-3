@@ -21,7 +21,7 @@ public class MainPage {
         @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/header/nav/a")
         public SelenideElement accountButton;
 
-        public AccountPage clickAccountButton() { ///ПЕРЕХОД В АККАУНТ
+        public AccountPage clickAccountButton() {
                 accountButton.click();
                 return page(AccountPage.class);}
 
@@ -40,7 +40,7 @@ public class MainPage {
         public SelenideElement bunButton;
 
         public MainPage clickBunButton() {
-                bunButton.click();return this;}
+                bunButton.shouldBe(enabled).click();return this;}
 
         @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/section[1]/div[2]/h2[1]")
         public SelenideElement bunSection;
@@ -59,7 +59,7 @@ public class MainPage {
         public SelenideElement sauceSection;
 
         public boolean isSauceActive() {
-                return sauceSection.shouldBe(visible).isDisplayed();}
+                return sauceSection.shouldBe(visible).isEnabled();}
 
         @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/section[1]/div[1]/div[3]")
         public SelenideElement fillingButton;
@@ -71,5 +71,5 @@ public class MainPage {
         public SelenideElement fillingSection;
 
         public boolean isFillingActive() {
-                return fillingSection.shouldBe(visible).isDisplayed();}
+                return fillingSection.shouldBe(enabled).isDisplayed();}
 }

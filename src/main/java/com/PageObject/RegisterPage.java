@@ -28,7 +28,7 @@ public class RegisterPage {
         public RegisterPage setCustomerPassword(String password) {
                 userPasswordField.setValue(password);return this;}
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/form/button")
+        @FindBy(how = How.TAG_NAME,using = "button")
         public SelenideElement registerButton;
 
         public LoginPage clickConfirmButton() {
@@ -45,7 +45,7 @@ public class RegisterPage {
         public boolean isPasswordIncorrect() {
                 return incorrectPasswordMessage.shouldBe(visible).getText().contains("Некорректный пароль");}
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/div/p/a")
+        @FindBy(how = How.CSS,using = "a[href='/login']")
         public SelenideElement toLoginButton;
 
         public LoginPage clickToLoginButton() {
