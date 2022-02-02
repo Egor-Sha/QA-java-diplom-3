@@ -12,7 +12,7 @@ public class AccountPage {
 
         public static final String URL = "https://stellarburgers.nomoreparties.site/account/profile";
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/nav/ul/li[3]/button")
+        @FindBy(how = How.XPATH,using = "//button[@type='button']")
         public SelenideElement logoutItem;
 
         public LoginPage clickToLogoutItem() {

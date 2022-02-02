@@ -16,7 +16,7 @@ public class RegisterPage {
         public RegisterPage setCustomerName(String name) {
                 userNameField.setValue(name);return this;}
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/form/fieldset[2]/div/div/input")
+        @FindBy(how = How.XPATH,using = "//fieldset[2]/div/div/input")
         public SelenideElement userEmailField;
 
         public RegisterPage setCustomerEmail(String email) {
@@ -39,7 +39,7 @@ public class RegisterPage {
                 registerButton.click();
                 return page(RegisterPage.class);}
 
-        @FindBy(how = How.XPATH,using = "//html/body/div[1]/div/main/div/form/fieldset[3]/div/p")
+        @FindBy(how = How.XPATH,using = "//p[text()='Некорректный пароль']")
         public SelenideElement incorrectPasswordMessage;
 
         public boolean isPasswordIncorrect() {
