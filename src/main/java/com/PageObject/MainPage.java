@@ -36,46 +36,40 @@ public class MainPage {
                 return page(LoginPage.class);}
 
 
-
-        @FindBy(how = How.CSS,using = "div:nth-child(2)>div:nth-child(1)")
+        @FindBy(how = How.XPATH,using = "//span[text()='Булки']")
         public SelenideElement bunButton;
 
         public MainPage clickBunButton() {
-                bunButton.shouldBe(enabled).click();return this;}
+                bunButton.shouldBe(enabled).doubleClick();return this;}
 
-
-        @FindBy(how = How.CSS,using = "h2:nth-child(1)")
+        @FindBy(how = How.XPATH,using = "//h2[text()='Булки']")
         public SelenideElement bunSection;
 
         public boolean isBunActive() {
                 return bunSection.shouldBe(visible).isDisplayed();}
 
 
-
-
-        @FindBy(how = How.CSS,using = "div:nth-child(2)>div:nth-child(2)")
+        @FindBy(how = How.XPATH,using = "//span[text()='Соусы']")
         public SelenideElement sauceButton;
 
         public MainPage clickSauceButton() {
                 sauceButton.shouldBe(enabled).click();return this;}
 
-
-        @FindBy(how = How.CSS,using = "h2:nth-child(3)")
+        @FindBy(how = How.XPATH,using = "//h2[text()='Соусы']")
         public SelenideElement sauceSection;
 
         public boolean isSauceActive() {
                 return sauceSection.shouldBe(visible).isDisplayed();}
 
 
-
-        @FindBy(how = How.CSS,using = "div:nth-child(2)>div:nth-child(3)")
+        @FindBy(how = How.XPATH,using = "//span[text()='Начинки']")
         public SelenideElement fillingButton;
 
         public MainPage clickFillingButton() {
-                fillingButton.shouldBe(enabled).click();return this;}
+                fillingButton.shouldBe(enabled).doubleClick();
+                return this;}
 
-
-        @FindBy(how = How.CSS,using = "h2:nth-child(5)")
+        @FindBy(how = How.XPATH,using = "//h2[text()='Начинки']")
         public SelenideElement fillingSection;
 
         public boolean isFillingActive() {

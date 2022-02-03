@@ -82,5 +82,4 @@ public class LoginLogoutTest extends AppTest {
                 .isLoginButtonAvailable();
         assertTrue(isLoginButtonAvailable, "Problem with logout");
     }
-
 }
