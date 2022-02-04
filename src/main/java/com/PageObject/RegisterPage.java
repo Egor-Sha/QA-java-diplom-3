@@ -13,23 +13,30 @@ public class RegisterPage {
         @FindBy(how = How.XPATH, using = "//input[@type='text']")
         public SelenideElement userNameField;
 
-        public RegisterPage setCustomerName(String name) {
-                userNameField.setValue(name);return this;}
-
         @FindBy(how = How.XPATH,using = "//fieldset[2]/div/div/input")
         public SelenideElement userEmailField;
-
-        public RegisterPage setCustomerEmail(String email) {
-                userEmailField.setValue(email);return this;}
 
         @FindBy(how = How.XPATH,using = "//input[@type='password']")
         public SelenideElement userPasswordField;
 
-        public RegisterPage setCustomerPassword(String password) {
-                userPasswordField.setValue(password);return this;}
-
         @FindBy(how = How.TAG_NAME,using = "button")
         public SelenideElement registerButton;
+
+        @FindBy(how = How.XPATH,using = "//p[text()='Некорректный пароль']")
+        public SelenideElement incorrectPasswordMessage;
+
+        @FindBy(how = How.CSS,using = "a[href='/login']")
+        public SelenideElement toLoginButton;
+
+
+        public RegisterPage setCustomerName(String name) {
+                userNameField.setValue(name);return this;}
+
+        public RegisterPage setCustomerEmail(String email) {
+                userEmailField.setValue(email);return this;}
+
+        public RegisterPage setCustomerPassword(String password) {
+                userPasswordField.setValue(password);return this;}
 
         public LoginPage clickConfirmButton() {
                 registerButton.click();
@@ -39,14 +46,8 @@ public class RegisterPage {
                 registerButton.click();
                 return page(RegisterPage.class);}
 
-        @FindBy(how = How.XPATH,using = "//p[text()='Некорректный пароль']")
-        public SelenideElement incorrectPasswordMessage;
-
         public boolean isPasswordIncorrect() {
                 return incorrectPasswordMessage.shouldBe(visible).getText().contains("Некорректный пароль");}
-
-        @FindBy(how = How.CSS,using = "a[href='/login']")
-        public SelenideElement toLoginButton;
 
         public LoginPage clickToLoginButton() {
                 toLoginButton.click();

@@ -15,17 +15,18 @@ public class LoginPage {
         @FindBy(how = How.NAME,using = "name")
         public SelenideElement userEmailField;
 
-        public LoginPage inputEmail(String email) {
-                userEmailField.shouldBe(enabled).setValue(email);return this;}
-
         @FindBy(how = How.NAME,using = "Пароль")
         public SelenideElement userPasswordField;
 
-        public LoginPage inputPassword(String password) {
-                userPasswordField.shouldBe(visible).setValue(password);return this;}
-
         @FindBy(how = How.XPATH,using = "//button[text()='Войти']")
         public SelenideElement loginButton;
+
+
+        public LoginPage inputEmail(String email) {
+                userEmailField.shouldBe(enabled).setValue(email);return this;}
+
+        public LoginPage inputPassword(String password) {
+                userPasswordField.shouldBe(visible).setValue(password);return this;}
 
         public MainPage clickLoginButton() {
                 loginButton.shouldBe(visible).click();
